@@ -11,6 +11,6 @@ spring:
     username:
       HCSadmin
     password:
-      vykguf-5roTmu-wanvim
+
     driver-class-name:
       com.mysql.cj.jdbc.Driver
