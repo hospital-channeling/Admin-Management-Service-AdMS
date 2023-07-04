@@ -5,7 +5,7 @@ import com.admin_management_system.admin.entity.Admin;
 import java.util.List;
 
 public interface IAdminService {
-    Admin createAdmin(Admin admin);
+    Admin addAdmin(Admin admin);
 
     Admin updateAdmin(int id, Admin admin);
 
