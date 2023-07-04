@@ -17,7 +17,7 @@ public class AdminController {
     //create a new admin
     @PostMapping("/createAdmin")
     public Admin createAdmin(@RequestBody Admin admin){
-        return adminService.createAdmin(admin);
+        return adminService.addAdmin(admin);
     }
 
     //delete an admin
