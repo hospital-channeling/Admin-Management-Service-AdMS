@@ -14,64 +14,66 @@ import lombok.NoArgsConstructor;
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "admin_ID")
-    private int id;
+    private int adminId;
     @Column(name = "first_name", nullable = false)
-    private String first_name;
+    private String adFirstName;
     @Column(name = "last_name", nullable = false)
-    private String last_name;
+    private String adLastName;
     @Column(name = "contact_num", nullable = false)
-    private int contact_num;
+    private int adContactNum;
     @Column(name = "email", nullable = false)
-    private String email;
+    private String adEmail;
     @Column(name = "password", nullable = false)
-    private String password;
+    private String adPassword;
 
     public int getAdminId() {
-        return id;
+        return adminId;
     }
 
     public void setAdminId(int id) {
-        this.id = id;
+        this.adminId = id;
     }
 
     public String getFirst_name() {
-        return first_name;
+        return adFirstName;
     }
 
     public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+        this.adFirstName = first_name;
     }
 
     public String getLast_name() {
-        return last_name;
+        return adLastName;
     }
 
     public void setLast_name(String last_name) {
-        this.last_name = last_name;
+        this.adLastName = last_name;
     }
 
     public int getContact_num() {
-        return contact_num;
+        return adContactNum;
     }
 
     public void setContact_num(int contact_num) {
-        this.contact_num = contact_num;
+        this.adContactNum = contact_num;
     }
 
     public String getEmail() {
-        return email;
+        return adEmail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.adEmail = email;
     }
 
     public String getPassword() {
-        return password;
+        return adPassword;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.adPassword = password;
     }
+
 }
