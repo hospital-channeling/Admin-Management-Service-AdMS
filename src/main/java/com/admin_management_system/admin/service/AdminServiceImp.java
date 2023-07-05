@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class AdminService implements IAdminService{
+public class AdminServiceImp implements IAdminService{
     @Autowired
     private IAdminRepository adminRepo;
 
@@ -22,19 +22,19 @@ public class AdminService implements IAdminService{
     @Override
     public Admin updateAdmin(int id, Admin admin){
         Optional<Admin> currentAdmin = adminRepo.findById(id);
-        Admin updateAdmin = currentAdmin.get();
+        Admin updAdmin = currentAdmin.get();
         if(currentAdmin.isPresent()){
-            updateAdmin.setAdminId(admin.getAdminId());
-            updateAdmin.setFirst_name(admin.getFirst_name());
-            updateAdmin.setLast_name(admin.getLast_name());
-            updateAdmin.setContact_num(admin.getContact_num());
-            updateAdmin.setEmail(admin.getEmail());
-            updateAdmin.setPassword(admin.getPassword());
+            updAdmin.setAdminId(admin.getAdminId());
+            updAdmin.setFirst_name(admin.getFirst_name());
+            updAdmin.setLast_name(admin.getLast_name());
+            updAdmin.setContact_num(admin.getContact_num());
+            updAdmin.setEmail(admin.getEmail());
+            updAdmin.setPassword(admin.getPassword());
         }
         else{
             System.out.println("Admin not found. ID = " +id);
         }
-        return adminRepo.save(updateAdmin);
+        return adminRepo.save(updAdmin);
     }
 
     @Override

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class UserService implements IUSerService {
+public class UserServiceImp implements IUSerService {
     @Autowired
     private IUserRepository userRepo;
 
@@ -25,21 +25,21 @@ public class UserService implements IUSerService {
     @Override
     public User updateUser(int id, User user){
         Optional<User> currentUser = userRepo.findById(id);
-        User updateUser = currentUser.get();
+        User updUser = currentUser.get();
         if (currentUser.isPresent()){
-            updateUser.setUserId(user.getUserId());
-            updateUser.setUserFirstName(user.getUserFirstName());
-            updateUser.setUserLastName(user.getUserLastName());
-            updateUser.setUserAddress(user.getUserAddress());
-            updateUser.setUserBirthdate(user.getUserBirthdate());
-            updateUser.setUserGender(user.getUserGender());
-            updateUser.setUserEmail(user.getUserEmail());
-            updateUser.setUserContactNum(user.getUserContactNum());
-            updateUser.setUserPassword(user.getUserPassword());
+            updUser.setUserId(user.getUserId());
+            updUser.setUserFirstName(user.getUserFirstName());
+            updUser.setUserLastName(user.getUserLastName());
+            updUser.setUserAddress(user.getUserAddress());
+            updUser.setUserBirthdate(user.getUserBirthdate());
+            updUser.setUserGender(user.getUserGender());
+            updUser.setUserEmail(user.getUserEmail());
+            updUser.setUserContactNum(user.getUserContactNum());
+            updUser.setUserPassword(user.getUserPassword());
         }
         else{
             System.out.println("User not found. ID = " +id);
         }
-        return userRepo.save(updateUser);
+        return userRepo.save(updUser);
     }
 }
