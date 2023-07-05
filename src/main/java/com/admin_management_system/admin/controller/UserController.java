@@ -1,17 +1,18 @@
 package com.admin_management_system.admin.controller;
 
 import com.admin_management_system.admin.entity.User;
+import com.admin_management_system.admin.service.UserServiceImp;
 import com.admin_management_system.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("http://localhost:8080")
-@RequestMapping(value = "/api/admin")
+@RequestMapping(value = "/api/user")
 
 public class UserController {
     @Autowired
-    private UserService userService;
+    private UserServiceImp userService;
 
     //creating a new user
     @PostMapping("/createUser")

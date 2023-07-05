@@ -22,7 +22,8 @@ public class Admin {
     @Column(name = "last_name", nullable = false)
     private String adLastName;
     @Column(name = "contact_num", nullable = false)
-    private int adContactNum;
+    private String adContactNum;
+
     @Column(name = "email", nullable = false)
     private String adEmail;
     @Column(name = "password", nullable = false)
@@ -52,28 +53,18 @@ public class Admin {
         this.adLastName = last_name;
     }
 
-    public int getContact_num() {
+    public String getContact_num() {
         return adContactNum;
     }
 
-    public void setContact_num(int contact_num) {
-        this.adContactNum = contact_num;
-    }
+    public void setContact_num(String contact_num) { this.adContactNum = contact_num; }
+    public String getEmail() { return adEmail; }
 
-    public String getEmail() {
-        return adEmail;
-    }
+    public void setEmail(String adEmail) { this.adEmail = adEmail; }
 
-    public void setEmail(String email) {
-        this.adEmail = email;
-    }
+    public String getPassword() { return adPassword; }
 
-    public String getPassword() {
-        return adPassword;
-    }
-
-    public void setPassword(String password) {
-        this.adPassword = password;
-    }
+    public void setPassword(String adPassword) { this.adPassword = adPassword; }
 
 }
+

@@ -1,7 +1,7 @@
 package com.admin_management_system.admin.controller;
 
 import com.admin_management_system.admin.entity.Admin;
-import com.admin_management_system.admin.service.AdminService;
+import com.admin_management_system.admin.service.AdminServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class AdminController {
     @Autowired
-    private AdminService adminService;
+    private AdminServiceImp adminService;
 
     //create a new admin
     @PostMapping("/createAdmin")
