@@ -2,7 +2,6 @@ package com.admin_management_system.admin.controller;
 
 import com.admin_management_system.admin.entity.User;
 import com.admin_management_system.admin.service.UserServiceImp;
-import com.admin_management_system.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
