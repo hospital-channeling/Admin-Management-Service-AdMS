@@ -17,31 +17,31 @@ public class ReceptionistController {
     private ReceptionistServiceImp recepService;
 
     //create a new receptionist
-    @PostMapping("/createReceptionist")
+    @PostMapping("/saveReceptionist")
     public Receptionist createRecep(@RequestBody Receptionist receptionist){
         return recepService.addReceptionist(receptionist);
     }
 
     //delete a receptionist
-    @DeleteMapping("/receptionist/{id}")
+    @DeleteMapping("/deleteReceptionist/{id}")
     public void deleteReceptionist(@PathVariable int id){
         recepService.deleteReceptionist(id);
     }
 
     //update an existing receptionist
-    @PutMapping("/receptionist/{id}")
+    @PutMapping("/updateReceptionist/{id}")
     public Receptionist updateReceptionist(@PathVariable int id, @RequestBody Receptionist receptionist){
         return recepService.updateReceptionist(id, receptionist);
     }
 
     //retrieve a receptionist by id
-    @GetMapping("/receptionist/{id}")
+    @GetMapping("/getReceptionistByID/{id}")
     public Receptionist getReceptionistByID(@PathVariable int id){
         return recepService.getReceptionistByID(id);
     }
 
     //retrieve all the receptionists
-    @GetMapping("/receptionist")
+    @GetMapping("/getReceptionist")
     public List<Receptionist> getallReceptionist(){
         return recepService.getAllReceptionist();
     }

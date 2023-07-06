@@ -21,25 +21,25 @@ public class AdminController {
     }
 
     //delete an admin
-    @DeleteMapping("/admin/{id}")
+    @DeleteMapping("/deleteAdmin/{id}")
     public void deleteAdmin(@PathVariable int id){
         adminService.deleteAdmin(id);
     }
 
     //update an existing admin
-    @PutMapping("/admin/{id}")
+    @PutMapping("/updateAdmin/{id}")
     public Admin updateAdmin(@PathVariable int id, @RequestBody Admin admin){
         return adminService.updateAdmin(id, admin);
     }
 
     //retrieve an admin by id
-    @GetMapping("/admin/{id}")
+    @GetMapping("/adminGetById/{id}")
     public Admin getAdminByID(@PathVariable int id){
         return adminService.getAdminByID(id);
     }
 
     //retrieve all the admins
-    @GetMapping("/admin")
+    @GetMapping("/adminGet")
     public List<Admin> getallAdmins(){
         return adminService.getAllAdmin();
     }

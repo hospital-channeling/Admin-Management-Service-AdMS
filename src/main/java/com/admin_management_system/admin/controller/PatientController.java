@@ -16,31 +16,31 @@ public class PatientController {
     private PatientServiceImp patientService;
 
     //create a new patient
-    @PostMapping("/createPatient")
+    @PostMapping("/saveUser")
     public Patient createPatient(@RequestBody Patient patient){
         return patientService.addPatient(patient);
     }
 
     //delete a patient
-    @DeleteMapping("/patient/{id}")
+    @DeleteMapping("/deleteUser/{id}")
     public void deletePatient(@PathVariable int id){
         patientService.deletePatient(id);
     }
 
     //update an existing patient
-    @PutMapping("/patient/{id}")
+    @PutMapping("/updateUser/{id}")
     public Patient updatePatient(@PathVariable int id, @RequestBody Patient patient){
         return patientService.updatePatient(id, patient);
     }
 
     //retrieve a patient by id
-    @GetMapping("/patient/{id}")
-    public Patient getPatientByID(@PathVariable int id){
+    @GetMapping("/getUSerById/{id}")
+    public Patient getUserByID(@PathVariable int id){
         return patientService.getPatientByID(id);
     }
 
     //retrieve all the patients
-    @GetMapping("/patient")
+    @GetMapping("/getUser")
     public List<Patient> getallPatients(){
         return patientService.getAllPatient();
     }

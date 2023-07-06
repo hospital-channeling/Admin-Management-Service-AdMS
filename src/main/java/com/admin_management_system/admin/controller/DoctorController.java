@@ -16,31 +16,31 @@ public class DoctorController {
     DoctorServiceImp docService;
 
     //create a new doctor
-    @PostMapping("/createDoctor")
+    @PostMapping("/saveDoctor")
     public Doctor createDoctor(@RequestBody Doctor doctor){
         return docService.addDoctor(doctor);
     }
 
     //delete a doctor
-    @DeleteMapping("/doctor/{id}")
+    @DeleteMapping("/deleteDoctor/{id}")
     public void deleteDoctor(@PathVariable int id){
         docService.deleteDoctor(id);
     }
 
     //update an existing doctor
-    @PutMapping("/doctor/{id}")
+    @PutMapping("/updateDoctor/{id}")
     public Doctor updateDoctor(@PathVariable int id, @RequestBody Doctor doctor){
         return docService.updateDoctor(id, doctor);
     }
 
     //retrieve a doctor by id
-    @GetMapping("/doctor/{id}")
+    @GetMapping("/getDoctorByID/{id}")
     public Doctor getDoctorByID(@PathVariable int id){
         return docService.getDoctorByID(id);
     }
 
     //retrieve all the doctors
-    @GetMapping("/doctor")
+    @GetMapping("/getDoctor")
     public List<Doctor> getallDoctors(){
         return docService.getAllDoctor();
     }
